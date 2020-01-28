@@ -1,0 +1,54 @@
+.content {
+    text-align: left;
+    transition: all 1.2s;
+    &.esports {
+        .head .subject {
+            color: #7a29ca;
+        }
+    }
+    &.football {
+        .head .subject {
+            color: #ed9d1e;
+        }
+    }
+    &.soccer {
+        .head .subject {
+            color: #2ae79d;
+        }
+    }
+    .head {
+        position: relative;
+        z-index: 10;
+        padding-top: 30px;
+        .subject {
+            font-size: 160px;
+            font-weight: 800;
+            font-style: italic;
+            line-height: 0.425;
+            position: absolute;
+            top: -22px;
+            left: 0;
+            z-index: 7;
+        }
+        .title {
+            font-size: 60px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.133;
+            position: relative;
+            z-index: 8;
+        }
+        .timer {
+            font-size: 14px;
+            color: #544b5e;
+            line-height: 4.857;
+        }
+    }
+    .text {
+        white-space: pre-wrap;
+        font-size: 16px;
+        color: #90849d;
+        line-height: 1.5;
+        text-align: justify;          
+    }
+}
