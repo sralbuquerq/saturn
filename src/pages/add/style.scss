@@ -18,12 +18,32 @@
             flex: 1;
             width: 100%;
 
-            label, input, textarea {
+            label, input, textarea, .MuiInput-root {
                 display: block;
                 width: 100%;
                 outline: none;
                 text-align: left;
                 transition: all 0.8s;
+            }
+
+            .MuiInput-root {
+                font-size: 16px;
+                line-height: 1.6;
+                font-weight: 600;
+                color: #90849d;
+                padding: 10px 30px;
+                margin-bottom: 20px;
+                &:before {
+                    border-bottom-color: #2d2535;
+                    color: #2d2535;
+                }
+                &:after {
+                    border-bottom-color: #7a29ca;
+                    color: #7a29ca;
+                }
+                svg {
+                    color: #7a29ca;
+                }
             }
 
             input, textarea {

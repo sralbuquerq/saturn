@@ -34,3 +34,45 @@
     }
   }
 }
+
+.stars {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 1px;
+  height: 1px;
+  .star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #574b64;
+    animation: 24s star 0s linear infinite;
+  }
+  .star:nth-child(odd) {
+    animation-direction: reverse;
+  }
+  @for $i from 1 through 200 {
+    .star:nth-child(#{$i}) {
+      top: random(400) - 100 + px;
+      left: random(100) - 100 + vw;
+    }
+  }
+}
+
+@keyframes star {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0px, 10px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  70% {
+    transform: translate(-20px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

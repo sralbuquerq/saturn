@@ -5,15 +5,67 @@
         .head .subject {
             color: #7a29ca;
         }
+        .head .delete {
+            border-color: #7a29ca;
+            color: #7a29ca;
+        }
     }
     &.football {
         .head .subject {
+            color: #ed9d1e;
+        }
+        .head .delete {
+            border-color: #ed9d1e;
             color: #ed9d1e;
         }
     }
     &.soccer {
         .head .subject {
             color: #2ae79d;
+        }
+        .head .delete {
+            border-color: #2ae79d;
+            color: #2ae79d;
+        }
+    }
+    &.undefined {
+        .head {
+            margin-bottom: 10px;
+            .title {
+                height: 40px;
+                background: #2d2535;
+                width: 200px;
+                border-radius: 4px;
+                opacity: 0.6;
+                margin-bottom: 10px;
+            }
+            .subject, .timer {
+                height: 12px;
+                background: #2d2535;
+                width: 60px;
+                border-radius: 4px;
+                opacity: 0.6;
+            }
+            .subject {
+                top: 10px;
+            }
+            .delete {
+                display: none;
+            }
+        }
+        .text {
+            height: 80px;
+            background: #2d2535;
+            width: 100%;
+            border-radius: 4px;
+            opacity: 0.6;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            display: block;
+            color: #403649;
+            font-style: italic;
+            font-size: 16px;
         }
     }
     .head {
@@ -43,6 +95,20 @@
             color: #544b5e;
             line-height: 4.857;
         }
+        .delete {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            border: 2px solid #544b5e;
+            color: #544b5e;
+            border-radius: 50px;
+            height: 30px;
+            width: 30px;
+            line-height: 38px;
+            text-align: center;
+            cursor: pointer;
+        }
     }
     .text {
         white-space: pre-wrap;
@@ -50,5 +116,8 @@
         color: #90849d;
         line-height: 1.5;
         text-align: justify;          
+    }
+    .instructions {
+        display: none;
     }
 }

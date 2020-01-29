@@ -3,9 +3,13 @@ import './style.scss';
 import Icon from '@material-ui/core/Icon';
 import { useSelector, useDispatch } from 'react-redux';
 import { activeArticle } from './../../../store/actions';
+import axios from 'axios';
+import { getArticles } from './../../../store/actions';
 
 export function List() {
     const list = useSelector(state => state.articles);
+    const started = useSelector(state => state.started);
+    const dispatch = useDispatch();
     console.log(list);
     // console.log(list.find(article => article === {
     //             title: 'Aquele título maroto...',
@@ -31,6 +35,18 @@ export function List() {
     // };
 
     // render() {
+        
+
+    if (!started) {
+        setTimeout(() => {
+            axios.get('http://localhost:4000/articles')
+            .then(response => dispatch(getArticles(response.data)))
+            .catch(er => console.error(er));
+            console.log('oi', started);;
+            console.log('oi', started);
+        }, 2000);
+    }
+
         return (
             <div className="list">
                 {list.map((article, i) => (
@@ -54,14 +70,6 @@ export function Item(props) {
             (state.title === undefined ? " hide" : " show") +
             (state.active ? " active" : "");
     }
-
-    // componentDidMount() {
-    // console.log('props.data', props.data);
-    // setTimeout(() => {
-    //     state = props.data;
-    //     console.log('state', state);
-    // }, 2000);
-    // }
 
     console.log(state);
     return (

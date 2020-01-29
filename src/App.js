@@ -16,6 +16,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
+        <Stars />
         <Router>
           <Header />
           <Switch>
@@ -32,7 +33,7 @@ function App() {
   );
 }
 
-function Header() {
+export const Header = () => {
   return (
     <nav className="navbar">
       <ul>
@@ -40,13 +41,25 @@ function Header() {
           <Link to="/">Notícias</Link>
         </li>
         <li>
-          <img src={logo} />
+          <img src={logo} alt="Logo" />
         </li>
         <li  className="link">
           <Link to="/add">Adicionar Conteúdo</Link>
         </li>
       </ul>
     </nav>
+  )
+}
+
+export const Stars = () => {
+  let stars = [];
+  for(let i=0; i<200; i++){
+    stars.push(<div key={i} className="star"></div>)
+  }
+  return (
+    <div className="stars">
+      {stars}
+    </div>
   )
 }
 
